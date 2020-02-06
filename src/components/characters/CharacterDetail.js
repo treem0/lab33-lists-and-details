@@ -1,15 +1,17 @@
 import React from 'react';
+import { useCharacterId } from '../../hooks/characterList';
 
-const CharacterDetail = () => {
+const CharacterDetail = ({ match }) => {
+  const { character } = useCharacterId(match.params.id);
+ 
   return (
     <>
       <section>
         <h1>{character.name}</h1>
-        <image src={character.image}></image>
+        <img src={character.image}></img>
         <p>{character.status}</p>
         <p>{character.species}</p>
         <p>{character.gender}</p>
-        <p>{character.origin.name}</p>
       </section>
     </>
   );

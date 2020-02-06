@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getCharacters } from '../services/rickAndMortyApi';
+import { getCharacters, getCharacterById } from '../services/rickAndMortyApi';
 
 
 export const useCharacters = () => {
@@ -14,5 +14,12 @@ export const useCharacters = () => {
 };
 
 export const useCharacterId = (id) => {
-    
+  const [character, setCharacter] = useState({});
+
+  useEffect(() => {
+    getCharacterById(id)
+      .then(character => setCharacter(character));
+  }, []);
+
+  return { character };
 };
