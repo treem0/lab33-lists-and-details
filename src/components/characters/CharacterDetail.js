@@ -9,9 +9,9 @@ const CharacterDetail = ({ match }) => {
       <section>
         <h1>{character.name}</h1>
         <img src={character.image}></img>
-        <p>{character.status}</p>
-        <p>{character.species}</p>
-        <p>{character.gender}</p>
+        <p>STATUS: {character.status}</p>
+        <p>SPECIES: {character.species}</p>
+        <p>GENDER: {character.gender}</p>
       </section>
     </>
   );
