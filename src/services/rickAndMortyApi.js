@@ -13,7 +13,15 @@ export const getCharacters = () => {
   
 export const getCharacterById = (id) => {
   return fetch(`https://rickandmortyapi.com/api/character/${id}`)
-    .then(res => res.json());
+    .then(res => res.json())
+    .then(({ id, name, image, status, species, gender }) => ({
+      id,
+      name,
+      image,
+      status,
+      species,
+      gender
+    }));
       
 };
     
